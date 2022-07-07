@@ -6,7 +6,10 @@ import store from './store'
 // reset重置
 import 'normalize.css'
 
-// element样式
+// 全局样式
+import '@/styles/global.scss'
+
+// element
 import '@/ui/element'
 
 Vue.config.productionTip = false

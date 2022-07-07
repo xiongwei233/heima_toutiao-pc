@@ -1,19 +1,22 @@
 <template>
-  <div id="app">
-    <router-view></router-view>
-  </div>
+  <div>articlesContent</div>
 </template>
 
 <script>
 export default {
+  name: 'articlesContent',
   data () {
     return {
     }
   },
   created () {
+  },
+  methods: {
+  },
+  components: {
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped >
 </style>

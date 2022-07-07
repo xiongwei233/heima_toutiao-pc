@@ -4,7 +4,7 @@
 import axiosFn from 'axios'
 
 const axios = axiosFn.create({
-  baseURL: 'http://api-toutiao-web.itheima.net',
+  baseURL: 'http://api-toutiao-web.itheima.net/mp/',
   timeout: 20000 // 20秒超时时间(请求20秒无响应，直接判断超时)
 })
 

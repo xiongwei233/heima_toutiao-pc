@@ -1,28 +1,57 @@
+import store from '@/store'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 const routes = [
-  /*
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
+    path: '/login',
+    name: 'Login',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-*/
-  //     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  //   }
+    component: () => import(/* webpackChunkName: "login" */ '@/views/Login')
+  },
+  {
+    path: '/',
+    name: 'Layout',
+    component: () => import(/* webpackChunkName: "home" */ '@/views/Layout'),
+    children: [
+      {
+        path: '/home',
+        name: 'Home',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/Home')
+      },
+      {
+        path: '/articles',
+        name: 'Articles',
+        component: () =>
+          import(/* webpackChunkName: "articles" */ '@/views/Articles')
+      }
+    ]
+  },
+  {
+    path: '/',
+    redirect: '/login'
+  }
 ]
 
 const router = new VueRouter({
   routes,
-  mode: 'hash'
+  mode: 'history'
 })
 
+router.beforeEach((to, from, next) => {
+  if (to.path === '/login') {
+    // 证明有token-已经登录了
+    next() // 跳转到home
+  } else {
+    // 如果进的不是login页面 判断是否有token
+    if (store.state.token === null) {
+      next('/login')
+    } else {
+      next()
+    }
+  }
+})
 export default router
