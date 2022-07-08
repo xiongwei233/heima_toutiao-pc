@@ -16,6 +16,7 @@ const routes = [
     path: '/',
     name: 'Layout',
     component: () => import(/* webpackChunkName: "home" */ '@/views/Layout'),
+
     children: [
       {
         path: '/home',
@@ -39,12 +40,14 @@ const routes = [
         name: 'Publish',
         component: () =>
           import(/* webpackChunkName: "publish" */ '@/views/Publish')
+      },
+      {
+        path: '/comment',
+        name: 'Comment',
+        component: () =>
+          import(/* webpackChunkName: "publish" */ '@/views/Comment')
       }
     ]
-  },
-  {
-    path: '/',
-    redirect: '/login'
   }
 ]
 

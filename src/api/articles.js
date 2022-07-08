@@ -17,7 +17,8 @@ export const getArticlesListAPI = ({
   begin_pubdate,
   end_pubdate,
   page = 1,
-  per_page = 10
+  per_page = 10,
+  response_type
 }) =>
   request({
     url: '/v1_0/articles',
@@ -28,7 +29,8 @@ export const getArticlesListAPI = ({
       begin_pubdate,
       end_pubdate,
       page,
-      per_page
+      per_page,
+      response_type
     }
   })
 
