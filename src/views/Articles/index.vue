@@ -176,7 +176,7 @@ export default {
     },
     // 修改
     editArticleFn (row) {
-      this.$router.push(`/publish?id=${row.id}`)
+      this.$router.push(`/publish?id=${row.id.toString()}`)
     },
     async deleteArticleFn (row) {
       this.$confirm('此操作将永久删除该文章, 是否继续?', '提示', {

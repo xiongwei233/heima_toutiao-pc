@@ -40,3 +40,10 @@ export const deleteArticleAPI = ({ articleId }) =>
     url: `/v1_0/articles/${articleId}`,
     method: 'DELETE'
   })
+
+// 获取指定文章
+export const getArticleIdAPI = ({ articleId }) =>
+  request({
+    url: `/v1_0/articles/${articleId}`,
+    method: 'GET'
+  })

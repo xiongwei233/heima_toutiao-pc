@@ -1,6 +1,7 @@
 /**
  * 封装网络请求
  */
+import router from '@/router'
 import store from '@/store'
 import axiosFn from 'axios'
 import JSONbig from 'json-bigint'
@@ -65,6 +66,14 @@ axios.interceptors.response.use(
     return response
   },
   function (error) {
+    // 如果当前报错或者返回的状态码为401
+    console.log(error)
+    if (error.response && error.response.status === 401) {
+      // 跳转到login
+      router.push('/login')
+      // 清除本地存储中的token
+      store.state.commit('REMOVE_TOKEN', 'token')
+    }
     // 对响应错误做点什么
     return Promise.reject(error)
   }

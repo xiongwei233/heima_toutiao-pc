@@ -29,3 +29,9 @@ export const check_Checkbox = (rule, value, callback) => {
   if (value) return callback()
   callback(new Error('请同意用户协议'))
 }
+
+// publish- 封面单选框
+export const check_Cover = (rule, value, callback) => {
+  if (value) return callback()
+  callback(new Error('选择封面'))
+}
