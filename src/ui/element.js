@@ -37,11 +37,17 @@ import {
   RadioButton,
   Row,
   Dialog,
-  Upload
+  Upload,
+  Tabs,
+  TabPane,
+  Avatar
 } from 'element-ui'
 
 Vue.use(Button)
 Vue.use(Upload)
+Vue.use(Avatar)
+Vue.use(Tabs)
+Vue.use(TabPane)
 Vue.use(Row)
 Vue.use(Dialog)
 Vue.use(RadioButton)
