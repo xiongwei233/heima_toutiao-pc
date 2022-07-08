@@ -42,7 +42,7 @@
         </el-form-item>
 
         <el-form-item>
-          <el-button type="primary" @click="articlesFn">查询</el-button>
+          <el-button type="primary" @click="queryFn" :loading="isLoading">查询</el-button>
         </el-form-item>
       </el-form>
     </el-card>
@@ -119,8 +119,7 @@ export default {
       page: 1,
       per_page: 10,
       total_count: 0,
-      articlesRules: {
-      }
+      isLoading: false
     }
   },
   created () {
@@ -160,6 +159,12 @@ export default {
         this.$message({ showClose: true, type: 'error', message: err.response.data.message })
       }
     },
+    queryFn () {
+      this.isLoading = true
+      this.articlesFn()
+      this.isLoading = false
+    },
+
     // 分页
     handleSizeChange (val) {
       this.per_page = val
