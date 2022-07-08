@@ -7,7 +7,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     // 默认头像路径
-    photo: getStorage('login_info').photo,
+    photo: getStorage('photo'),
     // token
     token: getStorage('token'),
     // 持久化token
@@ -20,6 +20,7 @@ export default new Vuex.Store({
     // 修改头像
     EDIT_PHOTO (state, value) {
       state.photo = value
+      setStorage('photo', value)
     },
     // 存token
     SET_TOKEN (state, value) {

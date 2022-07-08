@@ -31,7 +31,7 @@ export default {
         { id: 101, path: '/home', name: '首页' },
         { id: 102, path: '/articles', name: '内容管理' },
         { id: 103, path: '/images', name: '素材管理' },
-        { id: 104, path: '/addArticle', name: '发布文章' },
+        { id: 104, path: '/publish', name: '发布文章' },
         { id: 105, path: '/comment', name: '评论管理' },
         { id: 106, path: '/fans', name: '粉丝管理' },
         { id: 107, path: '/settings', name: '个人设置' }

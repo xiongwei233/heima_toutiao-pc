@@ -20,10 +20,26 @@ import {
   Dropdown,
   DropdownItem,
   DropdownMenu,
-  Image
+  Image,
+  Card,
+  Breadcrumb,
+  BreadcrumbItem,
+  Col,
+  DatePicker,
+  Radio,
+  RadioGroup,
+  Option,
+  Table,
+  TableColumn,
+  Tag,
+  Pagination,
+  MessageBox
 } from 'element-ui'
 
 Vue.use(Button)
+Vue.use(Pagination)
+Vue.use(Table)
+Vue.use(TableColumn)
 Vue.use(Select)
 Vue.use(Form)
 Vue.use(FormItem)
@@ -41,6 +57,17 @@ Vue.use(Dropdown)
 Vue.use(DropdownItem)
 Vue.use(DropdownMenu)
 Vue.use(Image)
+Vue.use(Card)
+Vue.use(Breadcrumb)
+Vue.use(BreadcrumbItem)
+Vue.use(Col)
+Vue.use(DatePicker)
+Vue.use(Radio)
+Vue.use(RadioGroup)
+Vue.use(Option)
+Vue.use(Select)
+Vue.use(Tag)
 
 // 全局方法
 Vue.prototype.$message = Message
+Vue.prototype.$confirm = MessageBox.confirm
