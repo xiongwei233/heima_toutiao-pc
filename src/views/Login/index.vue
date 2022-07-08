@@ -80,7 +80,7 @@ export default {
   created () {
   },
   methods: {
-    ...mapMutations([ 'EDIT_PHOTO', 'SET_TOKEN', 'SET_REFRESH_TOKEN', 'GET_LOGIN_INFO' ]),
+    ...mapMutations([ 'EDIT_PHOTO', 'SET_TOKEN', 'SET_REFRESH_TOKEN', 'GET_LOGIN_INFO', 'EDIT_NAME' ]),
     loginFn () {
       this.$refs.loginRef.validate(async valid => {
         if (!valid) return
@@ -91,6 +91,7 @@ export default {
           this.SET_TOKEN(res.data.token)
           this.SET_REFRESH_TOKEN(res.data.refresh_token)
           this.GET_LOGIN_INFO(res.data)
+          this.EDIT_NAME(res.data.name)
           console.log(res.data)
           this.$message({ showClose: true, type: 'success', message: '登录成功' })
           this.isLoading = false

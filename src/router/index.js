@@ -42,16 +42,22 @@ const routes = [
           import(/* webpackChunkName: "publish" */ '@/views/Publish')
       },
       {
+        path: '/comment',
+        name: 'Comment',
+        component: () =>
+          import(/* webpackChunkName: "publish" */ '@/views/Comment')
+      },
+      {
         path: '/fans',
         name: 'Fans',
         component: () =>
           import(/* webpackChunkName: "publish" */ '@/views/Fans')
       },
       {
-        path: '/comment',
-        name: 'Comment',
+        path: '/settings',
+        name: 'Settings',
         component: () =>
-          import(/* webpackChunkName: "publish" */ '@/views/Comment')
+          import(/* webpackChunkName: "publish" */ '@/views/Settings')
       }
     ]
   }

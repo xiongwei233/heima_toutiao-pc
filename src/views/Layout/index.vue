@@ -12,7 +12,7 @@
             <el-image style="width: 30px; height: 30px" :src="$store.state.photo" fit="cover"></el-image>
             <el-dropdown>
               <span class="el-dropdown-link">
-                下拉菜单
+                {{$store.state.name}}
                 <i class="el-icon-arrow-down el-icon--right"></i>
               </span>
               <el-dropdown-menu>

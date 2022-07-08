@@ -13,7 +13,8 @@ export default new Vuex.Store({
     // 持久化token
     refresh_token: getStorage('refresh_token'),
     // 登录 信息
-    loginInfo: {}
+    loginInfo: {},
+    name: getStorage('name')
   },
   getters: {},
   mutations: {
@@ -21,6 +22,11 @@ export default new Vuex.Store({
     EDIT_PHOTO (state, value) {
       state.photo = value
       setStorage('photo', value)
+    },
+    // 修改头像
+    EDIT_NAME (state, value) {
+      state.name = value
+      setStorage('name', value)
     },
     // 存token
     SET_TOKEN (state, value) {

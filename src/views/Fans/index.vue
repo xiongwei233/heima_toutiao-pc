@@ -43,7 +43,7 @@ export default {
   name: 'fanIndex',
   data () {
     return {
-      activeName: 'portrait',
+      activeName: 'list',
       list: 20,
       fansList: [],
       page: 1,
