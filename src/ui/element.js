@@ -33,10 +33,18 @@ import {
   TableColumn,
   Tag,
   Pagination,
-  MessageBox
+  MessageBox,
+  RadioButton,
+  Row,
+  Dialog,
+  Upload
 } from 'element-ui'
 
 Vue.use(Button)
+Vue.use(Upload)
+Vue.use(Row)
+Vue.use(Dialog)
+Vue.use(RadioButton)
 Vue.use(Pagination)
 Vue.use(Table)
 Vue.use(TableColumn)
